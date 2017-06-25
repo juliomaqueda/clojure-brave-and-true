@@ -1,4 +1,5 @@
 (ns brave-and-true.core
+  (require [brave-and-true.chapter5 :refer :all])
   (:gen-class))
 
 (defn -main
