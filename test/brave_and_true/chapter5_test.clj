@@ -33,15 +33,15 @@
         (is (= {:attributes {:intelligence 50}} (my-assoc-in data multiple-key 50)))))))
 
 
-;; chapter5.my-update
-(deftest my-update-test
+;; chapter5.my-update-in
+(deftest my-update-in-test
   (let [users [{:name "James" :age 26} {:name "John" :age 43}]
         keys [1 :age]]
     (testing "Testing my-update"
       (testing "with single incremental function"
-        (is (= [{:name "James" :age 26} {:name "John" :age 44}] (my-update users keys inc))))
+        (is (= [{:name "James" :age 26} {:name "John" :age 44}] (my-update-in users keys inc))))
       (testing "with function and params"
-        (is (= [{:name "James" :age 26} {:name "John" :age 49}] (my-update users keys + 1 2 3)))))))
+        (is (= [{:name "James" :age 26} {:name "John" :age 49}] (my-update-in users keys + 1 2 3)))))))
 
 
 ;; Run all tests
