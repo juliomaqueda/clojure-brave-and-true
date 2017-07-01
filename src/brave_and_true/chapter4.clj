@@ -21,8 +21,8 @@
 
 (defn validate? [suspect validations]
   (reduce #(and %1 %2)
-          (map (fn [validation-entry]
-                 ((val validation-entry) suspect (key validation-entry)))
+          (map (fn [[key func]]
+                 (func suspect key))
                validations)))
 
 
