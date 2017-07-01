@@ -30,4 +30,4 @@
 ;; 5. Implement update-in.
 
 (defn my-update-in [m [& keys] func & args]
-  (assoc-in m keys (apply func (get-in m keys) args)))
+  (my-assoc-in m keys (apply func (get-in m keys) args)))
